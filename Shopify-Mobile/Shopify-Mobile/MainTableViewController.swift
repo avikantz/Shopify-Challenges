@@ -88,6 +88,11 @@ class MainTableViewController: UITableViewController {
 			// Number of items sold
 			if let itemName = itemNameField.text {
 				// Present controller
+				if let icvc = storyboard?.instantiateViewController(withIdentifier: "ItemCountVC") as? ItemCountViewController {
+					icvc.orders = orders
+					icvc.itemName = itemName
+					self.navigationController?.pushViewController(icvc, animated: true)
+				}
 			}
 		}
 	}

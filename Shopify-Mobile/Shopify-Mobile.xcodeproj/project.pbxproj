@@ -19,6 +19,7 @@
 		59F0EBBC1F5D406400838326 /* PersonOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */; };
 		59F0EBC01F5DBE0000838326 /* OrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0EBBE1F5DBE0000838326 /* OrdersTableViewCell.swift */; };
 		59F0EBC11F5DBE0000838326 /* OrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F0EBBF1F5DBE0000838326 /* OrdersTableViewCell.xib */; };
+		59F0EBC41F5DD44700838326 /* ItemCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0EBC31F5DD44700838326 /* ItemCountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonOrdersViewController.swift; sourceTree = "<group>"; };
 		59F0EBBE1F5DBE0000838326 /* OrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewCell.swift; sourceTree = "<group>"; };
 		59F0EBBF1F5DBE0000838326 /* OrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersTableViewCell.xib; sourceTree = "<group>"; };
+		59F0EBC31F5DD44700838326 /* ItemCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				59F0EBC21F5DBE0800838326 /* Views */,
 				5952DF0A1F5D33C700644B50 /* MainTableViewController.swift */,
 				59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */,
+				59F0EBC31F5DD44700838326 /* ItemCountViewController.swift */,
 				5957FF3D1F5BEC5700A3414E /* Assets.xcassets */,
 				5957FF3F1F5BEC5700A3414E /* LaunchScreen.storyboard */,
 				5957FF421F5BEC5700A3414E /* Info.plist */,
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5957FF4B1F5BF0B700A3414E /* LineItem.swift in Sources */,
+				59F0EBC41F5DD44700838326 /* ItemCountViewController.swift in Sources */,
 				5957FF491F5BEC7E00A3414E /* Order.swift in Sources */,
 				5957FF4F1F5BFFB100A3414E /* Customer.swift in Sources */,
 				59F0EBBC1F5D406400838326 /* PersonOrdersViewController.swift in Sources */,

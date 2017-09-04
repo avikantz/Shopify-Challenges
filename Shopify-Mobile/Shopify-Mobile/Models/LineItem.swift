@@ -48,18 +48,18 @@ class LineItem: NSObject {
 	
 	init(dict: [String: AnyObject]) {
 		
-		id = Int(dict["id"] as? String ?? "") ?? 0
+		id = (dict["id"] as! NSNumber).intValue
 		variant_id = Int(dict["id"] as? String ?? "") ?? 0
 		
 		name = dict["name"] as? String ?? ""
 		title = dict["title"] as? String ?? ""
 		variant_title = dict["variant_title"] as? String ?? ""
 		
-		quantity = Int(dict["quantity"] as? String ?? "") ?? 0
-		fulfillable_quantity = Int(dict["fulfillable_quantity"] as? String ?? "") ?? 0
+		quantity = (dict["quantity"] as! NSNumber).intValue
+		fulfillable_quantity = (dict["fulfillable_quantity"] as! NSNumber).intValue
 		
 		price = Float(dict["price"] as? String ?? "") ?? 0.0
-		total_discount = Float(dict["total_discount"] as? String ?? "") ?? 0
+		total_discount = (dict["total_discount"] as! NSNumber).floatValue
 		
 		grams = Int(dict["grams"] as? String ?? "") ?? 0
 		

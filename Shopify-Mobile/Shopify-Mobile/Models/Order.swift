@@ -137,12 +137,12 @@ class Order: NSObject {
 		
 		test = Bool(dict["test"] as? String ?? "") ?? false
 		
-		total_price = Float(dict["total_price"] as? String ?? "") ?? 0
-		subtotal_price = Float(dict["subtotal_price"] as? String ?? "") ?? 0
+		total_price = (dict["total_price"] as! NSNumber).floatValue
+		subtotal_price = (dict["subtotal_price"] as! NSNumber).floatValue
 		
-		total_weight = Float(dict["total_weight"] as? String ?? "") ?? 0
+		total_weight = (dict["total_weight"] as! NSNumber).floatValue
 		
-		total_tax = Float(dict["total_tax"] as? String ?? "") ?? 0
+		total_tax = (dict["total_tax"] as! NSNumber).floatValue
 		taxes_included = Bool(dict["taxes_included"] as? String ?? "") ?? false
 		
 		currency = dict["currency"] as? String ?? ""
@@ -151,8 +151,8 @@ class Order: NSObject {
 		
 		confirmed = Bool(dict["confirmed"] as? String ?? "") ?? false
 		
-		total_discounts = Float(dict["total_discounts"] as? String ?? "") ?? 0
-		total_line_items_price = Float(dict["total_line_items_price"] as? String ?? "") ?? 0
+		total_discounts = (dict["total_discounts"] as! NSNumber).floatValue
+		total_line_items_price = (dict["total_line_items_price"] as! NSNumber).floatValue
 		
 		cart_token = dict["cart_token"] as? String ?? ""
 		
@@ -165,7 +165,7 @@ class Order: NSObject {
 		
 		cancel_reason = dict["cancel_reason"] as? String ?? ""
 		
-		total_price_usd = Float(dict["total_price_usd"] as? String ?? "") ?? 0
+		total_price_usd = (dict["total_price_usd"] as! NSNumber).floatValue
 		
 		checkout_token = dict["checkout_token"] as? String ?? ""
 		checkout_id = dict["checkout_id"] as? String ?? ""
@@ -183,11 +183,11 @@ class Order: NSObject {
 		phone = dict["phone"] as? String ?? ""
 		customer_locale = dict["customer_locale"] as? String ?? ""
 		
-		app_id = Int(dict["app_id"] as? String ?? "") ?? 0
+		app_id = (dict["app_id"] as! NSNumber).intValue
 		
 		browser_ip = dict["browser_ip"] as? String ?? ""
 		landing_site_ref = dict["landing_site_ref"] as? String ?? ""
-		order_number = Int(dict["order_number"] as? String ?? "") ?? 0
+		order_number = (dict["order_number"] as! NSNumber).intValue
 		
 		discount_codes = dict["discount_codes"] as? [AnyObject] ?? []
 		note_attributes = dict["note_attributes"] as? [AnyObject] ?? []
