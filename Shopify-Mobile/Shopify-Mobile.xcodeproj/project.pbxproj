@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5952DF0B1F5D33C700644B50 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952DF0A1F5D33C700644B50 /* MainTableViewController.swift */; };
 		5957FF371F5BEC5700A3414E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957FF361F5BEC5700A3414E /* AppDelegate.swift */; };
-		5957FF391F5BEC5700A3414E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957FF381F5BEC5700A3414E /* ViewController.swift */; };
 		5957FF3C1F5BEC5700A3414E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5957FF3A1F5BEC5700A3414E /* Main.storyboard */; };
 		5957FF3E1F5BEC5700A3414E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5957FF3D1F5BEC5700A3414E /* Assets.xcassets */; };
 		5957FF411F5BEC5700A3414E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5957FF3F1F5BEC5700A3414E /* LaunchScreen.storyboard */; };
@@ -16,12 +16,13 @@
 		5957FF4B1F5BF0B700A3414E /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957FF4A1F5BF0B700A3414E /* LineItem.swift */; };
 		5957FF4D1F5BFA7800A3414E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957FF4C1F5BFA7800A3414E /* Address.swift */; };
 		5957FF4F1F5BFFB100A3414E /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957FF4E1F5BFFB100A3414E /* Customer.swift */; };
+		59F0EBBC1F5D406400838326 /* PersonOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5952DF0A1F5D33C700644B50 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5957FF331F5BEC5700A3414E /* Shopify-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopify-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5957FF361F5BEC5700A3414E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5957FF381F5BEC5700A3414E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5957FF3B1F5BEC5700A3414E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5957FF3D1F5BEC5700A3414E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5957FF401F5BEC5700A3414E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		5957FF4A1F5BF0B700A3414E /* LineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
 		5957FF4C1F5BFA7800A3414E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		5957FF4E1F5BFFB100A3414E /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonOrdersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +65,26 @@
 			isa = PBXGroup;
 			children = (
 				5957FF361F5BEC5700A3414E /* AppDelegate.swift */,
-				5957FF4C1F5BFA7800A3414E /* Address.swift */,
-				5957FF4A1F5BF0B700A3414E /* LineItem.swift */,
-				5957FF4E1F5BFFB100A3414E /* Customer.swift */,
-				5957FF481F5BEC7E00A3414E /* Order.swift */,
-				5957FF381F5BEC5700A3414E /* ViewController.swift */,
+				59F0EBBD1F5D40F700838326 /* Models */,
 				5957FF3A1F5BEC5700A3414E /* Main.storyboard */,
+				5952DF0A1F5D33C700644B50 /* MainTableViewController.swift */,
+				59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */,
 				5957FF3D1F5BEC5700A3414E /* Assets.xcassets */,
 				5957FF3F1F5BEC5700A3414E /* LaunchScreen.storyboard */,
 				5957FF421F5BEC5700A3414E /* Info.plist */,
 			);
 			path = "Shopify-Mobile";
+			sourceTree = "<group>";
+		};
+		59F0EBBD1F5D40F700838326 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5957FF4C1F5BFA7800A3414E /* Address.swift */,
+				5957FF4A1F5BF0B700A3414E /* LineItem.swift */,
+				5957FF4E1F5BFFB100A3414E /* Customer.swift */,
+				5957FF481F5BEC7E00A3414E /* Order.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +161,10 @@
 			files = (
 				5957FF4B1F5BF0B700A3414E /* LineItem.swift in Sources */,
 				5957FF491F5BEC7E00A3414E /* Order.swift in Sources */,
-				5957FF391F5BEC5700A3414E /* ViewController.swift in Sources */,
 				5957FF4F1F5BFFB100A3414E /* Customer.swift in Sources */,
+				59F0EBBC1F5D406400838326 /* PersonOrdersViewController.swift in Sources */,
 				5957FF371F5BEC5700A3414E /* AppDelegate.swift in Sources */,
+				5952DF0B1F5D33C700644B50 /* MainTableViewController.swift in Sources */,
 				5957FF4D1F5BFA7800A3414E /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
