@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonOrdersViewController: UIViewController {
+class PersonOrdersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	var orders: [Order] = []
 	var personName: String = ""
@@ -25,6 +25,8 @@ class PersonOrdersViewController: UIViewController {
         // Do any additional setup after loading the view.
 		
 		self.title = "\(personName)'s Orders"
+		
+		tableView.register(UINib.init(nibName: "OrdersTableViewCell", bundle: nil), forCellReuseIdentifier: "ordersCell")
 		
 		let words = self.personName.components(separatedBy: " ")
 		let firstName = words.first!
@@ -50,16 +52,36 @@ class PersonOrdersViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	
+    // MARK: - Table view data source
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return personsOrders.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "ordersCell", for: indexPath) as! OrdersTableViewCell
+		let order = personsOrders[indexPath.row]
+		cell.orderIDLabel.text = "\(order.id)"
+		cell.orderNumberLabel.text = "\(order.number)"
+		cell.totalPriceLabel.text = "CAD \(order.total_price)"
+		cell.emailLabel.text = order.email
+		cell.fullNameLabel.text = "\(order.customer!.first_name) \(order.customer!.last_name)"
+		return cell
+	}
+	
+	// MARK: - Table view delegate
+	
+	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+		return false
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 128
+	}
 
 }

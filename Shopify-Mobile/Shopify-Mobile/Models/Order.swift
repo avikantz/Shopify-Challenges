@@ -10,14 +10,14 @@ import UIKit
 
 class Order: NSObject {
 
-	var id: Int = 0
+	var id: String = ""
 	var email: String = ""
 	
 	var closed_at: Date?
 	var created_at: Date?
 	var updated_at: Date?
 	
-	var number: Int = 0
+	var number: String = ""
 	var note: String = ""
 	
 	var token: String = ""
@@ -114,7 +114,7 @@ class Order: NSObject {
 	
 	init(dict: [String: AnyObject]) {
 		
-		id = Int(dict["id"] as? String ?? "") ?? 0
+		id = "\(dict["id"]!)"
 		name = dict["name"] as? String ?? ""
 		
 		email = dict["email"] as? String ?? ""
@@ -128,7 +128,7 @@ class Order: NSObject {
 		cancelled_at = formatter.date(from: (dict["cancelled_at"] as? String ?? ""))
 		processed_at = formatter.date(from: (dict["processed_at"] as? String ?? ""))
 		
-		number = Int(dict["number"] as? String ?? "") ?? 0
+		number = "\(dict["number"]!)"
 		
 		note = dict["note"] as? String ?? ""
 		

@@ -17,6 +17,8 @@
 		5957FF4D1F5BFA7800A3414E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957FF4C1F5BFA7800A3414E /* Address.swift */; };
 		5957FF4F1F5BFFB100A3414E /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957FF4E1F5BFFB100A3414E /* Customer.swift */; };
 		59F0EBBC1F5D406400838326 /* PersonOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */; };
+		59F0EBC01F5DBE0000838326 /* OrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0EBBE1F5DBE0000838326 /* OrdersTableViewCell.swift */; };
+		59F0EBC11F5DBE0000838326 /* OrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F0EBBF1F5DBE0000838326 /* OrdersTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		5957FF4C1F5BFA7800A3414E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		5957FF4E1F5BFFB100A3414E /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonOrdersViewController.swift; sourceTree = "<group>"; };
+		59F0EBBE1F5DBE0000838326 /* OrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewCell.swift; sourceTree = "<group>"; };
+		59F0EBBF1F5DBE0000838326 /* OrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,7 @@
 			children = (
 				5957FF361F5BEC5700A3414E /* AppDelegate.swift */,
 				59F0EBBD1F5D40F700838326 /* Models */,
-				5957FF3A1F5BEC5700A3414E /* Main.storyboard */,
+				59F0EBC21F5DBE0800838326 /* Views */,
 				5952DF0A1F5D33C700644B50 /* MainTableViewController.swift */,
 				59F0EBBB1F5D406400838326 /* PersonOrdersViewController.swift */,
 				5957FF3D1F5BEC5700A3414E /* Assets.xcassets */,
@@ -85,6 +89,16 @@
 				5957FF481F5BEC7E00A3414E /* Order.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		59F0EBC21F5DBE0800838326 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5957FF3A1F5BEC5700A3414E /* Main.storyboard */,
+				59F0EBBE1F5DBE0000838326 /* OrdersTableViewCell.swift */,
+				59F0EBBF1F5DBE0000838326 /* OrdersTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +162,7 @@
 			files = (
 				5957FF411F5BEC5700A3414E /* LaunchScreen.storyboard in Resources */,
 				5957FF3E1F5BEC5700A3414E /* Assets.xcassets in Resources */,
+				59F0EBC11F5DBE0000838326 /* OrdersTableViewCell.xib in Resources */,
 				5957FF3C1F5BEC5700A3414E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +180,7 @@
 				59F0EBBC1F5D406400838326 /* PersonOrdersViewController.swift in Sources */,
 				5957FF371F5BEC5700A3414E /* AppDelegate.swift in Sources */,
 				5952DF0B1F5D33C700644B50 /* MainTableViewController.swift in Sources */,
+				59F0EBC01F5DBE0000838326 /* OrdersTableViewCell.swift in Sources */,
 				5957FF4D1F5BFA7800A3414E /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
