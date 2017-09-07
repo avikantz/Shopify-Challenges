@@ -16,6 +16,16 @@ class OrdersTableViewCell: UITableViewCell {
 	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var fullNameLabel: UILabel!
 	
+	var order: Order? {
+		didSet {
+			orderIDLabel.text = order?.id
+			orderNumberLabel.text = order?.number
+			totalPriceLabel.text = "CAD \(order?.total_price ?? 0)"
+			emailLabel.text = order?.email
+			fullNameLabel.text = "\(order?.customer!.first_name ?? "") \(order?.customer!.last_name ?? "")"
+		}
+	}
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

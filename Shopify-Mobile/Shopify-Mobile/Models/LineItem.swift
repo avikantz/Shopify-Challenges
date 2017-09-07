@@ -49,7 +49,7 @@ class LineItem: NSObject {
 	init(dict: [String: AnyObject]) {
 		
 		id = (dict["id"] as! NSNumber).intValue
-		variant_id = Int(dict["id"] as? String ?? "") ?? 0
+		variant_id = (dict["variant_id"] as! NSNumber).intValue
 		
 		name = dict["name"] as? String ?? ""
 		title = dict["title"] as? String ?? ""
@@ -59,7 +59,7 @@ class LineItem: NSObject {
 		fulfillable_quantity = (dict["fulfillable_quantity"] as! NSNumber).intValue
 		
 		price = Float(dict["price"] as? String ?? "") ?? 0.0
-		total_discount = (dict["total_discount"] as! NSNumber).floatValue
+		total_discount = Float(dict["total_discount"] as? String ?? "") ?? 0.0
 		
 		grams = Int(dict["grams"] as? String ?? "") ?? 0
 		

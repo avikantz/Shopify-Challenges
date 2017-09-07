@@ -65,12 +65,7 @@ class PersonOrdersViewController: UIViewController, UITableViewDelegate, UITable
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ordersCell", for: indexPath) as! OrdersTableViewCell
-		let order = personsOrders[indexPath.row]
-		cell.orderIDLabel.text = "\(order.id)"
-		cell.orderNumberLabel.text = "\(order.number)"
-		cell.totalPriceLabel.text = "CAD \(order.total_price)"
-		cell.emailLabel.text = order.email
-		cell.fullNameLabel.text = "\(order.customer!.first_name) \(order.customer!.last_name)"
+		cell.order = personsOrders[indexPath.row]
 		return cell
 	}
 	
@@ -81,7 +76,7 @@ class PersonOrdersViewController: UIViewController, UITableViewDelegate, UITable
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 128
+		return 120
 	}
 
 }

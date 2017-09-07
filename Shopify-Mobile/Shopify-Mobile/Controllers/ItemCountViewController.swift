@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ItemCountViewController: UIViewController {
+class ItemCountViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
 	var orders: [Order] = []
 	var itemName: String = ""
 	var lineItems: [LineItem] = []
+	
+	@IBOutlet weak var tableView: UITableView!
 	
 	@IBOutlet weak var unitsLabel: UILabel!
 	
@@ -22,6 +24,8 @@ class ItemCountViewController: UIViewController {
         // Do any additional setup after loading the view.
 		
 		self.title = self.itemName
+		
+		tableView.register(UINib.init(nibName: "LineItemTableViewCell", bundle: nil), forCellReuseIdentifier: "lineItemCell")
 		
 		var count = 0
 		for order in orders {
@@ -53,5 +57,31 @@ class ItemCountViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+	
+	// MARK: - Table view data source
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return lineItems.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "lineItemCell", for: indexPath) as! LineItemTableViewCell
+		cell.lineItem = lineItems[indexPath.row]
+		return cell
+	}
+	
+	// MARK: - Table view delegate
+	
+	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+		return false
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 144
+	}
 
 }
