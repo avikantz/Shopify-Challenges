@@ -30,7 +30,6 @@ class ItemCountViewController: UIViewController, UITableViewDataSource, UITableV
 		var count = 0
 		for order in orders {
 			for lineItem in order.line_items {
-				print(lineItem.title)
 				if (lineItem.title.compare(itemName) == .orderedSame) {
 					count += lineItem.quantity
 					lineItems.append(lineItem)
