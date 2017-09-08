@@ -111,8 +111,8 @@ except:
 # f1 = open('customers.json', 'r')
 # f2 = open('orders.json', 'r')
 
-f1key = raw_input("Enter key for file 1: ")
-f2key = raw_input("Enter key for file 2: ")
+f1key = raw_input("Enter key for file 1 (ex. cid): ")
+f2key = raw_input("Enter key for file 2 (ex. customer_id): ")
 
 # f1key = 'cid'
 # f2key = 'customer_id'
@@ -126,27 +126,45 @@ array2 = json.loads(f2.read())
 # print("array2: ")
 # print(json.dumps(array2, sort_keys=True, indent=4))
 
-print("1. Inner Join\n2. Left Outer Join\n3. Right Outer Join\n4. Full Outer Join")
-inp = raw_input("Enter choice: ")
-try:
-	ch = int(inp)
-except:
-	ch = 0
+while True:
+	print("------------------------------------------------------------")
+	print("1. Inner Join\n2. Left Outer Join\n3. Right Outer Join\n4. Full Outer Join\n5. Total for orders by Barry and Steve\n0. Exit")
+	inp = raw_input("Enter choice: ")
+	try:
+		ch = int(inp)
+	except:
+		ch = 0
 
-if ch < 1 or ch > 4:
-	print("Invalid choice.")
-	sys.exit()	
+	if ch < 0 or ch > 5:
+		print("Invalid choice.")
+		sys.exit()	
 
-if (ch == 1):
-	res = innerJoin(array1, f1key, array2, f2key)
-	print(json.dumps(res, sort_keys=True, indent=4))
-elif (ch == 2):
-	res = sideOuterJoin(array1, f1key, array2, f2key)
-	print(json.dumps(res, sort_keys=True, indent=4))
-elif (ch == 3):
-	res = sideOuterJoin(array2, f2key, array1, f1key)
-	print(json.dumps(res, sort_keys=True, indent=4))
-elif (ch == 4):
-	res = fullOuterJoin(array1, f1key, array2, f2key)
-	print(json.dumps(res, sort_keys=True, indent=4))
+	if (ch == 0):
+		sys.exit()
+
+	if (ch == 1 or ch == 5):
+		res = innerJoin(array1, f1key, array2, f2key)
+		if (ch == 1):
+			print(json.dumps(res, sort_keys=True, indent=4))
+			print("Count: " + str(len(res)))
+		else:
+			total = 0
+			for name in ['Barry', 'Steve']:
+				for d in res:
+					if d["name"] == name:
+						total += d["price"]
+						print(name + ": " + str(d["price"]))
+			print("Total: " + str(total))
+	elif (ch == 2):
+		res = sideOuterJoin(array1, f1key, array2, f2key)
+		print(json.dumps(res, sort_keys=True, indent=4))
+		print("Count: " + str(len(res)))
+	elif (ch == 3):
+		res = sideOuterJoin(array2, f2key, array1, f1key)
+		print(json.dumps(res, sort_keys=True, indent=4))
+		print("Count: " + str(len(res)))
+	elif (ch == 4):
+		res = fullOuterJoin(array1, f1key, array2, f2key)
+		print(json.dumps(res, sort_keys=True, indent=4))
+		print("Count: " + str(len(res)))
 
